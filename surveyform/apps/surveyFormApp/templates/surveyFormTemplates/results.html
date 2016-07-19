@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resutls</title>
+</head>
+<body>	
+
+	<p>
+	{{ request.session.counter }}
+	</p>
+	{% for info in request.session.data.items %}
+		<p>
+		{{ info.0 }}:
+		
+		{{ info.1 }}
+		</p>
+		
+	{% endfor %}
+
+</body>
+</html>

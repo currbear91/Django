@@ -1,0 +1,16 @@
+body{
+	text-align: center;
+	padding-top: 50px;
+	background-color: whitesmoke;
+}
+
+fieldset{
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	outline: 1px solid red;
+}
+
+#login{
+	display: inline-block;
+}

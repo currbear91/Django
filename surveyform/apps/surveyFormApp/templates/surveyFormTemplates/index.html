@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'surveryFormAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'surveryFormAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		<!-- <h1>HEY HEY HEY</h1> -->
+		<p class = 'usernum'>You are User: {{ request.session.counter }}</p>
+		<div id = 'container'>
+			<div class = 'name'>
+				<form action = '/process' method = "GET" >
+					{% csrf_token %}
+					<p>
+						<label for= "name"> Your Name:</label>
+						<input type="text" name="name" id="name" placeholder="First Name">
+					</p>
+			</div>
+			<div class = 'selection'>
+					<p>
+					<table></table>
+					<span class = 'describe'>Your Location:</span>
+					<select name = "dojolocation">
+						<option value ="Seattle">Seattle</option>
+						<option value ="DC">DC</option>
+						<option value ="Chicago">Chicago</option>
+						<option value ="Burbank">Burbank</option>
+					</select>
+					</p>
+					<span class = 'describe2'>Favorite Language:</span>
+					<select name = "favLang">
+						<option value ="Python">Python</option>
+						<option value ="Ruby">Ruby</option>
+						<option value ="Mean">MEAN</option>
+						<option value ="iOS">iOS</option>
+						<option value ="HTML">HTML</option>
+					</select>
+			</div>
+					<p>
+					<textarea name = "comments" rows = 10 cols=20 placeholder="Comment (optional)"></textarea>
+					</p>
+					<input class = "btn btn-primary" type="submit" value="Submit">
+				</form>
+		</div>	
+	</body>
+</html>

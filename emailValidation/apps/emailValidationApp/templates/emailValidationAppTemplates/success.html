@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Registration</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'courseAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'emailValidationAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+
+
+	<h1>Congratulations! You have successfully created an email  {{ emails.0.email }} address!</h1>
+
+	<div>
+		{% for email in emails %}
+		
+			<h3>{{ email.email }}{{ email.created_at }}	
+
+		{% endfor %}
+	</div>
+
+</body>
+</html>

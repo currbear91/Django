@@ -1,0 +1,44 @@
+body{
+	text-align: center;
+	/*align-self: center;*/
+	padding-top: 200px;
+	
+
+
+}
+
+#container{
+	border: 1em inset black;
+	padding: 15px;
+}
+
+.name{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+
+}
+
+.selection{
+	display: block;
+	margin-bottom: 100px;
+}
+
+.usernum{
+	font-weight: bolder;
+	font-size: 1.5em;
+	margin-bottom: 50px;
+	background-color: 
+}
+
+.describe{
+	/*margin-right: 75px;*/
+	text-align: end;
+	padding-right: 75px;
+	}
+
+.describe2{
+	margin-right: 50px;
+	
+	
+	}

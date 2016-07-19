@@ -1,0 +1,58 @@
+body{
+	text-align: center;
+	padding-top: 50px;
+	background-color: whitesmoke;
+}
+
+legend{
+	font-size: 3em;
+	font-weight: bolder;
+	font-family: courier;
+}
+
+.boxes{
+	display:inline-block;
+	border: 3px solid black;
+	height: 300px;
+	width: 300px;
+	background-color: silver;
+}
+
+h2{
+	font-family: courier;
+	font-weight: bolder;
+
+}
+
+p{
+	font-weight: lighter;
+	font-size: 1.2em;
+	font-family: courier;
+
+}
+
+hr{
+	border: none;
+	color: #333;
+	background-color: #333;
+	height: 5px;
+}
+
+.btn{
+	margin-top: 75px;
+}
+
+#activity{
+	overflow: auto;
+	height: 300px;
+	width: 900px;
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+	border: 2px groove black;
+
+}
+
+.activity{
+	font-size: 1.5em;
+}
