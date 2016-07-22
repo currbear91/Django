@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Word</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'randomWordAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'randomWordAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	<div id = 'container'>
+		{% csrf_token %}
+
+		<h1>Random Word Generator ( attempt: {{request.session.counter }})</h1>
+			<div class= 'words'>
+				<h2>{{ request.session.randomstring }}</h2>
+			</div>
+		<form action = '{% url 'my_word_process' %}' method= "POST" >
+		{% csrf_token %}
+			<input class = 'btn btn-primary' type="submit" name="SubmitForm" value= "Generate">
+		</form>
+		<form action = '{% url 'my_word_reset' %}' method= "POST" >
+		{% csrf_token %}
+			<input class = 'btn btn-primary' type="submit" name="resetForm" value= "Reset">
+		</form>
+
+
+	</div>
+
+</body>
+</html>

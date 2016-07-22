@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Registration</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'loginRegCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'loginRegCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+
+
+
+	<div>
+		
+		
+			<h2> Welcome, {{ gal.first_name }} </h2>
+
+			<div class='bookreview'>
+				<form action="" method="" >
+
+				<a href="{% url 'my_book_add' %}">Add A New Book</a>
+
+					<ul>
+						<li><a href="#"> NAME OF BOOK</a></li>
+						<li class= 'ratings'>Rating</li>
+						<li><a href="#">NAME OF COMMENTER</a> ***COMMENTS***</li>
+						<li>****CREATED AT****</li>
+					</ul>
+
+				</form>		
+			</div>
+			<div class= 'otherReviews'>
+				<ul>
+					<li><a href="#"></a>***OTHER BOOK TITlES***</a></li>
+				</ul>
+
+
+	</div>
+
+</body>
+</html>

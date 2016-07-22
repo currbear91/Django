@@ -1,0 +1,18 @@
+body{
+	text-align: center;
+	align-self: center;
+	padding-top: 200px;
+	background-color: whitesmoke;
+
+}
+.words{
+	display: inline-block;
+	border: 1em solid black;
+	height: 100px;
+	width: 500px;
+}
+
+.btn{
+	margin-top: 20px;
+	width: 200px;
+}

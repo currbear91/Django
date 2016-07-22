@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi-Restful</title>
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'semiAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'semiAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		 
+		<h1>Product {{ products.id }}</h1>
+		<hr>
+		<div class= "itembox">
+			<p>Name : {{products.product_name}}</p>
+			<p>Description : {{ products.product_description }}</p>
+			<p>Price : $ {{ products.product_price }}</p>
+			
+
+		{% csrf_token %}
+			 <a href="/edits/{{ products.id }}"> Edit</a>
+			 <a href="/">Back</a>
+			
+		</div>
+
+	</body>
+</html>

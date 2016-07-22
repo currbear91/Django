@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login And Registration</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'loginRegCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'loginRegCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+
+	
+	<div id = "registration">
+		<fieldset class = "form-group">
+			<legend>Registration</legend>
+			<form  action="{% url 'my_login_process' %}" method='POST'>
+			{% csrf_token %}
+				<input class = 'input-control' type="text" name="first_name" placeholder="First Name">
+				<input type="text" name="last_name" placeholder="Last Name">
+				<input type="email" name="email" placeholder="Email">
+				<input type="password" name="password" placeholder="Password">
+				<input type="password" name="confirm" placeholder="Confirm Password">
+				<input class ="btn btn-primary"  type="submit" name="submit">
+			</form>
+				{% if messages %}
+				<ul class="messages">
+				{% for message in messages %}
+					<li {% if message.tags %} class=" list-group-item list-group-item-warning {{ message }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		</fieldset>
+	</div>
+
+	<div id = 'login'>
+		<fieldset>
+			<legend>Login</legend>
+			{% if messages %}
+				<ul class="messages">
+				{% for message in messages %}
+					<li{% if message.tags %} class=" list-group-item list-group-item-warning {{ message.error }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+			<form action="{% url 'my_login_success' %}" method="POST">
+			{% csrf_token %}
+				<input type="email" name="email" placeholder="Username/Email">
+				<input type="password" name="password" placeholder="Password">
+			<!-- 	<input type="text" name="password">
+				<input type="text" name="confirm"> -->
+				<input class ="btn btn-primary" type="submit" name="submit">
+			</form>
+		</fieldset>
+	</div>	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

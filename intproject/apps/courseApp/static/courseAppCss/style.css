@@ -1,0 +1,24 @@
+body{
+	text-align: center;
+	padding-top: 50px;
+	background-color: whitesmoke;
+}
+
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center; 
+}
+
+#top{
+	display: inline-block;
+}
+
+input,textarea{
+	display: block;
+	margin-top: 15px;
+}
+
+.course{
+	font-size: 1.4em;
+}

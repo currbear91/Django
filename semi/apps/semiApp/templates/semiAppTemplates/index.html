@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi-Restful</title>
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'semiAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'semiAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		<h1>Products</h1>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Actions</th>
+				</tr>
+				{% for product in products %}
+				<tr>
+					<td>{{ product.product_name }}</td>
+					<td>{{ product.product_description}}</td>
+					<td>{{ product.product_price }}</td>
+					
+		<form action = '/destroys/{{ product.id }}' method="POST">
+		{% csrf_token %}
+					<td><a href="/shows/{{ product.id }}">Show</a> |
+						<a href="/edits/{{ product.id }}"> Edit</a> | 
+						<input class = "btn btn-primary" type="submit" name="<!-- <!-- remove --> -->" value="Remove"></td>
+				</tr>
+				{% endfor %}	
+			</table>
+		</form>
+		<form action="/news" method="POST">
+		{% csrf_token %}
+			<input class = "btn btn-primary" type="submit" name="addnew" value="Add New Product">
+		</form>
+
+	</body>
+</html>

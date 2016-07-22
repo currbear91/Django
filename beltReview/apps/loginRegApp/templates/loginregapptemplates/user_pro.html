@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt Review</title>
+		{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'loginRegAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'loginRegAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		
+		<div class= 'userproheader'>
+			<a href="{% url 'my_login_display'%} ">Home</a>
+			<a href="{% url 'my_book_add' %}">Add A New Book</a>
+			<a href="#">LogOut</a>
+		</div>
+		<div class='userdetails'>
+			<h1>User Name: ***FIRST_NAME***</h1>
+			<h3>***FIRST_NAME , LAST_NAME***</h3>
+			<h3>EMAIL: ***USER_EMAIL***</h3>
+			<h3>Total Reviews: ***NUMBER OF REVIEWS***</h3>
+		</div>
+		<div class = 'userproreviews'>
+			<h3>Posted Reviews on the following book:</h3>
+			<hr>
+			<ul>
+				<li><a href="#">***BOOK REVIEWS***</a></li>
+				
+				<hr>
+			</ul>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Registration</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'loginRegCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'loginRegCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+
+
+
+	<div>
+		
+		
+			<h2> Add A New Book Title and a Review:</h2>
+			<a href="{% url 'my_login_display'%} ">Home</a>
+			<div class = 'newbook' >
+
+				<form action = '{% url "my_book_review" %}' method="POST">
+				 {% csrf_token %}
+					<p><input type="text" name="book_title" placeholder="Book Title"></p>
+					<hr>
+					<p><select name="author">
+						<option disabled selected></option>
+						<option>***AUTHOR NAME***</option>
+					</select></p>
+					<hr>
+					<p><input type="text" name="addauthor" placeholder="Enter Authors Name"></p>
+					<hr>
+					<p><textarea name="bookreview" rows = "8" cols="80" placeholder="Describe Book"></textarea><p>
+					<hr>
+					<select name="rating">
+						<option disabled selected></option>
+						<option>***SELECT RATING***</option>
+					</select>
+					<input class = 'btn btn-primary' type="submit" name="postreview" value="Add Book and Review">
+					
+
+				</form>
+			</div>
+
+	</div>
+
+</body>
+</html>

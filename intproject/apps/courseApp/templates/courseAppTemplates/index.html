@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'courseAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'courseAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	
+	<div id = 'top'>
+		<h2>Add A New Course</h2>
+			<form action="{% url 'my_course_process' %}" method="POST">
+		{% csrf_token %}
+				<input type="text" name="name" placeholder="Enter Name">
+				<textarea name = 'description' placeholder="Enter Description of Course" cols= "50" rows="8"></textarea>
+				<input class ="btn btn-primary" type="submit" name="addclass" value="Add Course">
+			</form>
+			<form action="{% url 'my_usercourse' %}" >
+				{% csrf_token %}
+				<input class = 'btn btn-primary' type="submit" name="submit" value="Join A Class">
+			</form>
+	</div>
+	<div class = "posted">
+		<h2>Courses</h2>	
+			<table align="center" style = "width:70%">
+			
+				<tr>
+					<th>Course Name</th>
+					<th>Course Description</th>
+					<th>Course Added</th>
+					<th>Actions</th>
+				</tr>
+				{% for course in courses  %}
+				<tr>
+					<td>{{ course.course_name }}</td>
+					<td>{{ course.course_description }}</td>
+					<td>{{ course.created_at }}</td>
+					<td><a href="{% url 'my_course_delete' course.id %}">Remove</a></td>
+				</tr>
+
+				{% endfor %}
+			</table>	
+	</div>
+</body>
+</html>

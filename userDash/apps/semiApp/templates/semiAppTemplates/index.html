@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi-Restful</title>
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'semiAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'semiAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		<h1>Users</h1>
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>User Level</th>
+					<th>Actions</th>
+				</tr>
+				{% for user in users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.name}</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.created_at}</td>
+					<td>{{ user.level }}</td>
+					
+		<form action = '{% url "my_semi_destroys" product.id %}' method="POST">
+		{% csrf_token %}
+					<td><a href="/shows/{{ product.id }}">Show</a> |
+						<a href="/edits/{{ product.id }}"> Edit</a> | 
+						<input class = "btn btn-primary" type="submit" name="<!-- <!-- remove --> -->" value="Remove"></td>
+				</tr>
+				{% endfor %}	
+			</table>
+		</form>
+		<form action="{% url 'my_semi_news' %}" method="POST">
+		{% csrf_token %}
+			<input class = "btn btn-primary" type="submit" name="addnew" value="Add New Product">
+		</form>
+
+	</body>
+</html>

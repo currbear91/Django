@@ -1,0 +1,27 @@
+body{
+	text-align: center;
+	align-self: center;
+	padding-top: 200px;
+	background-image: url('../img/Obeystar.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.header{
+	background-color: whitesmoke;
+	opacity: .8;
+	border: 2px solid silver;
+}
+
+.line{
+	/*position: fixed;*/
+	margin-top: px auto;
+	background-color: whitesmoke;
+	opacity: .8;
+	border: 2px solid silver;
+	/*margin-top:%;*/
+	font-size: 1.5em;
+	font-weight: bolder;
+	
+}

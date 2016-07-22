@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'courseAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'courseAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	<div class = "posted">
+		<h2>Are you want to delete the following course?</h2>	
+			<p class='course'>Course Name: {{ courses.course_name }}</p>
+			<hr>
+			<p class= 'course'>Course Description:{{ courses.course_description }}</p>
+			<hr>	
+		<form action="{% url 'my_course_destroy' courses.id %}" method="POST">
+		{% csrf_token %}
+			<input class = 'btn btn-primary' type="submit" name="delete" value="Yes, I would LOVE to delete this">
+			<input class = 'btn btn-primary' type="submit" name="delete" value="No">
+			
+		</form>
+	</div>
+</body>
+</html>

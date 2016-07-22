@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt Review</title>
+		{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'beltreviewCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'beltreviewCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		<div class='showheader'>
+			<h1>***BOOK TITLE***</h1>
+			<h3>***BOOK AUTHOR***</h3>
+		</div>
+		<div class = 'showreviews'>
+			<h3>Reviews:</h3>
+			<r>
+			<ul>
+				<li>***RATINGS***</li>
+				<li><a href="#">***USER_NAME***</a> says ***USERCOMMENT***</li>
+				<li>***CREATED AT***</li>
+				<hr>
+			</ul>
+		<div class= 'showadd'>
+			<form action="{% url 'my_specific_review' %}">
+			 {% csrf_token %}
+				<textarea placeholder="Enter Your Review"></textarea>
+				<input class = 'btn btn-primary' type="submit" name="submitereview" value="Submit Review">
+			</form>
+		</div>
+	</body>
+</html>

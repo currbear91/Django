@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login And Registration</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'loginRegCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'loginRegCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+	<div id = 'login'>
+		<fieldset>
+			<legend>Login</legend>
+			{% if messages %}
+				<ul class="messages">
+				{% for message in messages %}
+					<li{% if message.tags %} class=" list-group-item list-group-item-warning {{ message.error }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+			<form action="{% url 'my_login_success' %}" method="POST">
+			{% csrf_token %}
+				<input type="email" name="email" placeholder="Username/Email">
+				<input type="password" name="password" placeholder="Password">
+
+				<input class ="btn btn-primary" type="submit" name="submit">
+			</form>
+		</fieldset>
+	</div>	
+
+</body>
+</html>

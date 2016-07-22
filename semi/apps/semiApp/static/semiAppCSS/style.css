@@ -1,0 +1,17 @@
+body{
+	text-align: center;
+	padding-top: 50px;
+	background-color: whitesmoke;
+}
+
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center; 
+	margin: auto;
+	width: 800px;
+}
+
+.itembox{
+	border: 1px solid black;
+}

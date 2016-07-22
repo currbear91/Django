@@ -1,0 +1,34 @@
+body{
+	text-align: center;
+	padding-top: 50px;
+	background-color: whitesmoke;
+}
+
+input{
+
+	display: block;
+	margin-left: 125px;
+	margin-top: 15px;
+}
+
+
+
+#registration{
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	vertical-align: top;
+
+}
+
+#login{
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	vertical-align: top;
+
+}
+.btn{
+	margin-left: 10px;
+}
+

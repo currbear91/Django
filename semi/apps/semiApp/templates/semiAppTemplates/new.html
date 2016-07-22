@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi-Restful</title>
+
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'semiAppCSS/bootstrap.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="stylesheet" href="{% static 'semiAppCSS/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+	<body>
+		<h1>Create A New Item</h1>
+		<hr>
+		<div class= "itembox">
+		{% csrf_token %}
+			<form action="/creates" method="POST">
+			{% csrf_token %}
+				<input type="text" name="name">
+				<input type="text" name="description">
+				<input type="text" name="price">
+				<input type="submit" name="create" value="Create Item">
+				<a href="/">Back</a>
+			</form>
+		</div>
+
+	</body>
+</html>
